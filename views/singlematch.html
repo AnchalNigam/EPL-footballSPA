@@ -1,0 +1,63 @@
+<!--Header-->
+<div class="jumbotron jumbotron-singlematch visible-lg">
+</div>
+<!--Header end-->
+
+ <!--myjumbotron-->
+<div class="jumbotron my-jumbotron single-topadjust">
+   <h2 class="margin-text-style">Single Match Review</h2>
+</div><!--end-->
+
+<!--Single Match Review-->
+<div class="container">
+     <div class="row " id="adjustment">
+          <div class=" col-xs-7 col-lg-6 col-lg-offset-1">
+            <span class="match-heading">{{singleMatch.singlematch.date}}</span>
+          </div>
+           <div class="col-xs-5 col-lg-4">
+
+            <span class="pull-right match-heading"><img src="images/match-logo.jpg" class="match-logo">{{singleMatch.roundName}}</span>
+          </div>
+        
+      </div>
+      <div class="row">
+      	 <div class="col-xs-12 col-lg-11 col-lg-offset-1" id="mytable">
+		        
+		      <table class="table table-hover">
+		           
+				    <tbody>
+				      <tr>
+				      
+				        <td class="col-lg-5 heading-singlematch" id="name-adjust">Team Names</td>
+				        <td class="col-lg-7 "><a ng-href="#/statistics/{{singleMatch.singlematch.team1.name}}/{{singleMatch.singlematch.team1.key}}"><span class="value-singlematch">{{singleMatch.singlematch.team1.name}}</span></a><img src="images/vs.jpg" class="vs-logo"><a ng-href="#/statistics/{{singleMatch.singlematch.team2.name}}/{{singleMatch.singlematch.team2.key}}"><span class="value-singlematch">{{singleMatch.singlematch.team2.name}}</span></a></td>
+				        
+				      </tr>
+				      <tr>
+				      
+				        <td class="col-lg-5 heading-singlematch" id="name-adjust">Team Codes</td>
+				        <td class="col-lg-7 "><span class="value-singlematch">{{singleMatch.singlematch.team1.code}}</span><img src="images/vs.jpg" class="vs-logo"><span class="value-singlematch">{{singleMatch.singlematch.team2.code}}</span></td>
+				       
+				      </tr>
+				      <tr>
+				         <td class="col-lg-5 heading-singlematch" id="name-adjust">Team Keys</td>
+				        <td class="col-lg-7 "><span class="value-singlematch">{{singleMatch.singlematch.team1.key}}</span><img src="images/vs.jpg" class="vs-logo"><span class="value-singlematch">{{singleMatch.singlematch.team2.key}}</span></td>
+				       
+				        
+				      </tr>
+				      <tr>
+				         <td class="col-lg-5 heading-singlematch" id="name-adjust">Team Scores</td>
+				        <td class="col-lg-7 "><span class="value-singlematch">{{singleMatch.singlematch.score1}}</span><img src="images/hyphen.png" class="vs-logo"><span class="value-singlematch">{{singleMatch.singlematch.score2}}</span></td>
+				       
+				        
+				      </tr>
+				      <tr>
+				         <td class="col-lg-5 heading-singlematch" id="name-adjust">Winner</td>
+				        <td class="col-lg-7 "><img src="images/cracker.png" class="vs-logo"><span class="value-singlematch"> {{singleMatch.winnerName}} </span><img src="images/cracker.png" class="vs-logo"></td>
+				       
+				        
+				      </tr>
+				    </tbody>
+		       </table>
+            </div><!--COLUMN END-->
+        </div><!--ROW END-->
+</div><!--CONTAINER END-->

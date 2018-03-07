@@ -1,0 +1,30 @@
+<!--Header-->
+<div class="jumbotron jumbotron-news visible-lg">
+</div>
+<!--Header end-->
+
+<div class="container single-topadjust">
+	<div ng-repeat="news in myNews.footballNews">
+		<div class="row thumbnail">
+			<div class="col-lg-2">
+				<div ng-if="(news.urlToImage)!=null ">
+				<div ng-if="(news.urlToImage).indexOf('https')!=-1 ">
+					<img ng-src={{news.urlToImage}} alt=" " class="img-responsive" id="news-image"/></a>
+				</div>
+			    </div>
+                <div ng-if="(news.urlToImage)==null ">
+                	<img ng-src="images/icon.jpg" alt=" " class="img-responsive" id="news-image"/></a>
+                </div>
+				<div ng-if="(news.urlToImage).indexOf('https')==-1">
+					<img ng-src="images/icon.jpg" alt=" " class="img-responsive" id="news-image"/></a>
+				</div>
+			
+			</div>
+			<div class="col-lg-8">
+				<a ng-href={{news.url}}><h1 class="match-heading">{{news.title}}</h1></a>
+				<span class="news-info">{{news.description}}....<a ng-href={{news.url}}><u>Read More</u></a></span>
+
+			</div>
+		</div>
+    </div>
+</div>

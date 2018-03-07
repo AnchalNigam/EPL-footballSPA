@@ -1,0 +1,149 @@
+	  <!--Mycarousel-->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+           <li data-target="#myCarousel" data-slide-to="2"></li>
+         
+        </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+
+          <div class="item active">
+          	  
+            <img class="animated rollIn " id="item-image" src="images/football2.png" alt="Los Angeles" >   
+            
+          </div>
+
+          <div class="item">
+    	   
+            <img src="images/football1.jpg" id="item-image" alt="Chicago" >
+           
+          </div>
+          <div class="item">
+         
+            <img src="images/football4.png" id="item-image" alt="Chicago" >
+           
+          </div>
+     
+      </div>
+
+  </div><!--Carousel End-->
+
+ 
+  <div class="contanier-fluid">
+      <!--collapasible filters-->
+     <div class="text-center filter-margin">
+        <button class="btn btn-danger btn-lg" type="button" data-toggle="collapse" data-target="#myForm"> Filters
+        </button>
+     </div>
+    <br>
+    <form class="collapse collapse-class" role="form" id="myForm" >
+      
+        <div class="col-lg-2 col-lg-offset-1">
+            <p id="filter-style">Filter by Year</p>
+                <select  ng-model="searchYear" class=" form-control ">
+                   <option value="">Select</option>
+                   <option value="2015">EPL-2015</option>
+                   <option value="2016">EPL-2016</option>
+                   <option value="2017">EPL-2017</option>
+               </select>
+            </p>
+        </div>
+
+        <div class="col-lg-2 ">
+            <p id="filter-style">Filter by Matches </p>
+                <input type="text" class="form-control margin-text-style " ng-model="searchStr" >
+            </p>
+        </div>
+        <div class="col-lg-2">
+            <p id="filter-style">Filter by Team Name/Code</p>
+                <input type="text" class="form-control margin-text-style" ng-model="searchTeamName" ng-change="myMatches.start=0">
+            </p>
+        </div>
+        
+       
+        <div class="col-lg-2">
+            <p id="filter-style">Filter by Goals of Team 1</p>
+                <input type="text" class="form-control margin-text-style" ng-model="searchGoal1" ng-change="myMatches.start=0">
+            </p>
+        </div>
+        <div class="col-lg-2">
+            <p id="filter-style">Filter by Goals of Team 2</p>
+                <input type="text" class="form-control margin-text-style" ng-model="searchGoal2" ng-change="myMatches.start=0">
+            </p>
+        </div>
+ 
+    </form><!--filters end-->
+    <!--myjumbotron-->
+    <div class="jumbotron my-jumbotron">
+       <h2 class="margin-text-style">Matches List</h2>
+    </div><!--end-->
+
+     <!--Matches list-->
+    <div class="container">
+    
+      <div  ng-repeat="allmatches in myMatches.allmatches | filter:{name:searchStr}" >
+
+        <div ng-hide="(allmatches.matches  |  filter:{date:searchYear} | filter:{ score1:searchGoal1,score2:searchGoal2} |  filter:searchTeamName).length==0">  
+          <div class="row " id="adjustment">
+              <div class=" col-xs-7 col-lg-6 col-lg-offset-1">
+                 
+              </div>
+               <div class="col-xs-5 col-lg-4">
+
+                <span class="pull-right match-heading"><img src="images/match-logo.jpg" class="match-logo">{{allmatches.name}}</span>
+              </div>
+            
+          </div>
+        </div>
+   
+        <div ng-repeat="allmatchesround in allmatches.matches |  filter:{date:searchYear} | filter:searchTeamName | filter:{ score1:searchGoal1,score2:searchGoal2} as result">
+            
+          <div class="matchhover">
+          <hr>
+         
+            <div class="row">
+                 <div class="col-xs-2  col-lg-2">
+                    <span class="match-info">{{allmatchesround.date | date:"dd.MM.y" }} </span>
+                 </div>
+                 <div class="col-xs-4  col-lg-4 col-lg-offset-1">
+                    <a ng-href="#/statistics/{{allmatchesround.team1.name}}/{{allmatchesround.team1.key}}"><span class="match-info">{{allmatchesround.team1.name}}</a>&nbspv/s&nbsp</span><a ng-href="#/statistics/{{allmatchesround.team2.name}}/{{allmatchesround.team2.key}}"><span class="match-info">{{allmatchesround.team2.name}}</a></span>
+                 </div>
+                  <div class="col-xs-4 col-lg-3">
+                    <span class="match-info">{{allmatchesround.team1.code}}&nbsp</span><span class="score">{{allmatchesround.score1}}</span><b> - </b> <span class="score">{{allmatchesround.score2}}</span><span class="match-info">&nbsp{{allmatchesround.team2.code}}</span>
+                 </div>
+                 <div class="col-xs-2 col-lg-1">
+                   <a ng-href="#/match/{{$parent.$index}}/{{$index}}"><span class="quick-view" title="Quick View"><i class="fa fa-search"></i></span></a>
+                 
+                 
+                 </div>
+
+              </div><!--row end-->
+            <hr>
+          </div><!--matchhover end-->
+
+        </div>
+
+        </div>
+      </div>
+    
+       <div ng-if="(myMatches.allmatches | filter:{name:searchStr}).length==0">
+           <h5 class="no-result"><img src="images/noresult.png" id="no-image"> Sorry! No Result found of your request</h5>
+       </div>
+
+    </div><!--Matches list end-->
+  </div>
+
+<script>
+  $("input").hover(function(){
+    $(this).css("background-color", "#C3083F");
+    $(this).css("color", "white");
+    }, function(){
+    $(this).css("background-color", "white");
+    $(this).css("color", "black");
+});
+  
+</script>

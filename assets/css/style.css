@@ -1,0 +1,294 @@
+/*preloader*/
+.loading {
+  overflow: hidden;
+ 
+}
+.main-content{ 
+display:none; 
+}
+#preloader  {
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background-color: #fefefe;
+     z-index: 99;
+    height: 100%;
+ }
+
+#status  {
+     width: 200px;
+     height: 200px;
+     position: absolute;
+     left: 50%;
+     top: 50%;
+     background-image: url(../../images/loader.gif);
+     background-repeat: no-repeat;
+     background-position: center;
+     margin: -100px 0 0 -100px;
+ }
+ /*preloader end*/
+/*Navbar styles*/
+ .shiftLeft{
+     margin-right:5vmax;
+ 
+}
+ .navbar-custom{
+
+    background-color:white;
+   
+
+ }
+ .navbar-fixed-top {
+    min-height: 90px;
+}
+.logo-set{
+     width:150px;
+     height:71px;
+}
+@media (max-width:300px){
+    .logo-set{
+     width:35vmin;
+     height:25vmin;
+}
+}
+#myspan-adjust{
+     padding-top: 0px;
+    padding-bottom: 0px;
+    line-height: 50px;
+    margin-top:35px;
+    margin-bottom:auto;
+    font-size:15px;
+}
+.navbar-nav > li > a{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    line-height: 90px;
+    font-size:20px;
+    font-family:garamond;
+   
+}
+#my a:hover{
+     background-color:#C3083F;
+     color:white;
+}
+
+@media (max-width: 767px) {
+    .navbar-nav > li > a {
+    line-height: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;}
+}
+/*navbar styles end*/
+
+/*.center-content{
+     margin-top:10vmin;
+}*/
+
+/*allmatches view style*/
+#myForm{
+    margin-bottom:16vh;
+
+}
+#item-image{
+height:120vmin;
+width:100%;
+}
+#filter-style{
+   color:#950741;
+
+}
+.margin-text-style{
+    color:white;
+    font-family:garamond;
+    font-weight:bold;
+    
+    margin-left:2vh;
+}
+.filter-margin{
+    margin-top:2.5vh;
+
+    
+}
+.my-jumbotron{
+    background-color: #C3083F;
+    padding:1vh;
+  
+}
+#adjustment{
+    margin-top:8vmin;
+}
+.match-heading{
+    font-size:3vmin;
+    font-family:impact;
+    color:#4E4E50;
+}
+.match-logo{
+    width:9vmin;
+    height:6vmin;
+}
+.match-info{
+    font-size:2.2vmin;
+    color:#6F2232;
+    font-family:cursive;
+
+}
+.quick-view{
+    cursor: pointer;
+}
+@media only screen and (max-width:500px) {
+    .quick-view{
+        font-size:2vmin;
+
+    }
+    }
+.score{
+    background-color:#950741;
+    padding:1vmin;
+     font-size:2.7vmin;
+    color:white;
+ 
+}
+.matchhover:hover{
+     background-color:#D3D3D3;
+}
+.no-result{
+    color:#950741;
+    font-family:impact;
+    text-align:center;
+}
+#no-image{
+      width:3.3vmin;
+    height:3.3vmin;
+}
+
+/*singlematch*/
+.jumbotron-singlematch {
+  background-image:url('../../images/singlematchheader.jpg');
+  height:600px;
+  background-repeat: no-repeat;
+  background-size:cover;
+ 
+}
+.single-topadjust{
+  margin-top:10vmin;
+ }
+ @media (max-width:300px){
+     .single-topadjust{
+          margin-top:40vmin;
+         }
+         
+ }
+ @media (min-width:300px) and (max-width:1199px){
+     .single-topadjust{
+          margin-top:25vmin;
+         }
+         
+ }
+ #mytable > table.table td {
+    padding-left:15vmin;
+}
+#name-adjust{
+  padding-top:23px;
+}
+.vs-logo{
+    width:9vmin;
+    height:8vmin;
+}
+#mytable .heading-singlematch{
+     font-size:2.7vmin;
+    color:#6F2232;
+    font-family:garamond;
+    font-weight:bold;
+}
+#mytable .value-singlematch{
+     font-size:2.7vmin;
+    color:#6F2232;
+    font-family:cursive;
+}
+/*Error page*/
+.error{
+    margin-top:30vmin;
+     margin-bottom:30vmin;
+
+}
+
+/*Team statistics*/
+.jumbotron-statistics {
+  background-image:url('../../images/statistics.png');
+  height:600px;
+  background-repeat: no-repeat;
+  background-size:cover;
+ 
+}
+.mycolor{
+  background-color: #D77090;
+}
+.secondcolor{
+  background-color: #C2C9CF;
+}
+.thirdcolor{
+  background-color: #AFD274;
+}
+.forthcolor{
+  background-color: #46A29F;
+}
+.fifthcolor{
+  background-color: #EE4C7D;
+}
+.sphere {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 150%;
+  position: relative;
+  top:30px;
+  box-shadow: inset -10px -10px 100px #000, 10px 10px 20px black, inset 0px 0px 10px black;
+  color:white;
+}
+.red .active a,
+.red .active a:hover {
+    background-color: #920841 !important;
+}
+.navbar-toggle .icon-bar{
+    color:black;
+}
+.tab-margin{
+    margin-top:10vmin;
+}
+.chart-topadjust{
+  margin-top:20vmin;
+ }
+ #chart{
+    color:#6F2232;
+    font-family:cursive;
+
+ }
+
+ /*nEWS*/
+
+.jumbotron-news{
+  background-image:url('../../images/news.jpg');
+  height:600px;
+  background-repeat: no-repeat;
+  background-size:cover;
+ 
+}
+#news-image{
+    width:35vmin;
+    height:30vmin;
+}
+.news-info{
+    font-size:2.8vmin;
+    color:#6F2232;
+    font-family:cursive;
+
+}
+/*Footer*/
+.text-style{
+    font-size:2vh;
+}
